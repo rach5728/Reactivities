@@ -26,10 +26,8 @@
     <Content Include="public\logo512.png" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\manifest.json" />
-    <Content Include="src\App.css" />
-    <Content Include="src\index.css" />
+    <Content Include="src\app\layout\styles.css" />
     <Content Include="src\index.tsx" />
-    <Content Include="src\logo.svg" />
     <Content Include="tsconfig.json">
       <SubType>Code</SubType>
     </Content>
@@ -37,9 +35,12 @@
   <ItemGroup>
     <Folder Include="public" />
     <Folder Include="src" />
+    <Folder Include="src\app\" />
+    <Folder Include="src\app\layout\" />
+    <Folder Include="src\features\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\App.tsx" />
+    <TypeScriptCompile Include="src\app\layout\App.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
