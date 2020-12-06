@@ -38,9 +38,11 @@
     <Folder Include="src\app\" />
     <Folder Include="src\app\layout\" />
     <Folder Include="src\features\" />
+    <Folder Include="src\models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\layout\App.tsx" />
+    <TypeScriptCompile Include="src\models\activity.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
