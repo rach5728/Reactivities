@@ -19,6 +19,15 @@
   <ItemGroup>
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="public\assets\categoryImages\culture.jpg" />
+    <Content Include="public\assets\categoryImages\drinks.jpg" />
+    <Content Include="public\assets\categoryImages\film.jpg" />
+    <Content Include="public\assets\categoryImages\food.jpg" />
+    <Content Include="public\assets\categoryImages\music.jpg" />
+    <Content Include="public\assets\categoryImages\travel.jpg" />
+    <Content Include="public\assets\logo.png" />
+    <Content Include="public\assets\placeholder.png" />
+    <Content Include="public\assets\user.png" />
     <Content Include="README.md" />
     <Content Include="public\robots.txt" />
     <Content Include="public\index.html" />
@@ -34,14 +43,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public" />
+    <Folder Include="public\assets\" />
+    <Folder Include="public\assets\categoryImages\" />
     <Folder Include="src" />
     <Folder Include="src\app\" />
     <Folder Include="src\app\layout\" />
     <Folder Include="src\features\" />
+    <Folder Include="src\features\activities\dashboard\" />
+    <Folder Include="src\features\activities\details\" />
+    <Folder Include="src\features\activities\form\" />
+    <Folder Include="src\features\nav\" />
+    <Folder Include="src\features\activities\" />
     <Folder Include="src\models\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\layout\App.tsx" />
+    <TypeScriptCompile Include="src\features\activities\dashboard\ActivityDashboard.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\features\activities\dashboard\ActivityList.tsx" />
+    <TypeScriptCompile Include="src\features\activities\details\ActivityDetails.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\features\activities\form\ActivityForm.tsx" />
+    <TypeScriptCompile Include="src\features\nav\NavBar.tsx" />
     <TypeScriptCompile Include="src\models\activity.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
