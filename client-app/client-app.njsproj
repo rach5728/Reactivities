@@ -49,6 +49,7 @@
     <Folder Include="src\app\" />
     <Folder Include="src\app\layout\" />
     <Folder Include="src\app\api\" />
+    <Folder Include="src\app\stores\" />
     <Folder Include="src\features\" />
     <Folder Include="src\features\activities\dashboard\" />
     <Folder Include="src\features\activities\details\" />
@@ -63,6 +64,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\layout\App.tsx" />
     <TypeScriptCompile Include="src\app\layout\LoadingComponent.tsx" />
+    <TypeScriptCompile Include="src\app\stores\activityStore.ts" />
     <TypeScriptCompile Include="src\features\activities\dashboard\ActivityDashboard.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
