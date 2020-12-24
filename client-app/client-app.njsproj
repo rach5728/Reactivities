@@ -56,6 +56,7 @@
     <Folder Include="src\features\activities\form\" />
     <Folder Include="src\features\nav\" />
     <Folder Include="src\features\activities\" />
+    <Folder Include="src\features\home\" />
     <Folder Include="src\models\" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +65,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\layout\App.tsx" />
     <TypeScriptCompile Include="src\app\layout\LoadingComponent.tsx" />
+    <TypeScriptCompile Include="src\app\layout\ScrollToTop.tsx" />
     <TypeScriptCompile Include="src\app\stores\activityStore.ts" />
     <TypeScriptCompile Include="src\features\activities\dashboard\ActivityDashboard.tsx">
       <SubType>Code</SubType>
@@ -73,6 +75,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\features\activities\form\ActivityForm.tsx" />
+    <TypeScriptCompile Include="src\features\home\HomePage.tsx">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\features\nav\NavBar.tsx" />
     <TypeScriptCompile Include="src\models\activity.ts" />
   </ItemGroup>

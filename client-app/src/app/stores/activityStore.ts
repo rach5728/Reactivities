@@ -1,4 +1,4 @@
-import { makeAutoObservable} from "mobx";
+import {  makeAutoObservable, runInAction } from "mobx";
 import { createContext, SyntheticEvent } from "react";
 import { IActivity } from "../../models/activity";
 import agent from "../api/agent";
@@ -7,10 +7,8 @@ import agent from "../api/agent";
 
 class ActivityStore {
     activityRegistry = new Map();//observable map for mobx
-    activities: IActivity[] = [];
-    selectedActivity: IActivity | undefined;
+    activity: IActivity | null = null;
     loadingInitial = false;
-    editMode = false;
     submitting = false;
     target = '';
 
@@ -44,13 +42,42 @@ class ActivityStore {
         }
     };
 
+    loadActivity = async (id: string) => {
+        let activity = this.getActivity(id);
+        if (activity) {
+            this.activity = activity;
+        } else {
+            this.loadingInitial = true;
+            try {
+                activity = await agent.Activities.details(id);
+                runInAction(() => {
+                    this.activity = activity;
+                    this.loadingInitial = false;
+                })
+            }
+            catch (error) {
+                runInAction(() => {
+                    this.loadingInitial = false;
+                });
+                console.log(error);
+            }
+        }
+    }
+
+    getActivity = (id: string) => {
+        return this.activityRegistry.get(id);
+    }
+
+    clearActivity = () => {
+        this.activity = null;
+    }
+
     createActivity = async (activity: IActivity) => {
         this.submitting = true;
         try {
             await agent.Activities.create(activity);
             this.activityRegistry.set(activity.id, activity);
             //this.activities.push(activity);
-            this.editMode = false;
             this.submitting = false;
         } catch (error) {
             console.log(error);
@@ -63,8 +90,7 @@ class ActivityStore {
         try {
             await agent.Activities.update(activity);
             this.activityRegistry.set(activity.id, activity);
-            this.selectedActivity = activity;
-            this.editMode = false;
+            this.activity = activity;
             this.submitting = false;
         }
         catch (error) {
@@ -88,34 +114,29 @@ class ActivityStore {
         }
     }
 
-    openCreateForm = () => {
-        this.editMode = true;
-        this.selectedActivity = undefined;
-    }
-
-    openEditForm = (id: string) => {
-        this.selectedActivity = this.activityRegistry.get(id);
-        this.editMode = true;
-    }
-
-    cancelSelectedActivity = () => {
-        this.selectedActivity = undefined;
-    }
-
-    cancelFormOpen = () => {
-        this.editMode = false;
-    }
-
-    selectActivity = (id: string) => {
-        //this.selectedActivity = this.activities.find(a => a.id === id);
-        this.selectedActivity = this.activityRegistry.get(id);
-        this.editMode = false;
-    };
-
     //need to have this constructor for mobx version>= 6
     constructor() {
         makeAutoObservable(this)
     };
 }
+
+//decorate(ActivityStore, {
+//    activityRegistry: observable,
+//    activities: observable,
+//    selectedActivity: observable,
+//    loadingInitial: observable,
+//    editMode: observable,
+//    submitting: observable,
+//    target: observable,
+//    activitiesByDate: computed,
+//    loadActivities: computed,
+//    createActivity: action,
+//    editActivity: action,
+//    deleteActivity: action,
+//    openCreateForm: action,
+//    cancelSelectedActivity: action,
+//    cancelFormOpen: action,
+//    selectActivity: action
+//});
 
 export default createContext(new ActivityStore())
