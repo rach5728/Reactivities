@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4d9315bd-1731-4f95-8ba3-2dc0f6a4634b}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -71,6 +71,11 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\features\activities\dashboard\ActivityList.tsx" />
+    <TypeScriptCompile Include="src\features\activities\dashboard\ActivityListItem.tsx" />
+    <TypeScriptCompile Include="src\features\activities\details\ActivityDetailedChat.tsx" />
+    <TypeScriptCompile Include="src\features\activities\details\ActivityDetailedHeader.tsx" />
+    <TypeScriptCompile Include="src\features\activities\details\ActivityDetailedInfo.tsx" />
+    <TypeScriptCompile Include="src\features\activities\details\ActivityDetailedSidebar.tsx" />
     <TypeScriptCompile Include="src\features\activities\details\ActivityDetails.tsx">
       <SubType>Code</SubType>
     </TypeScriptCompile>
