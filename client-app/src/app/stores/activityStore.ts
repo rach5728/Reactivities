@@ -45,7 +45,7 @@ class ActivityStore {
                 //});
                 this.loadingInitial = false;
             });
-            console.log(activities);
+            //console.log(activities);
         } catch (error) {
             //runInAction(() => {
             this.loadingInitial = false;

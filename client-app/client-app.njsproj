@@ -65,6 +65,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\layout\App.tsx" />
     <TypeScriptCompile Include="src\app\layout\LoadingComponent.tsx" />
+    <TypeScriptCompile Include="src\app\layout\NotFound.tsx" />
     <TypeScriptCompile Include="src\app\layout\ScrollToTop.tsx" />
     <TypeScriptCompile Include="src\app\stores\activityStore.ts" />
     <TypeScriptCompile Include="src\features\activities\dashboard\ActivityDashboard.tsx">
