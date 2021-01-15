@@ -42,13 +42,18 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\app\common\util\" />
+    <Folder Include="typings-custom\" />
     <Folder Include="public" />
     <Folder Include="public\assets\" />
     <Folder Include="public\assets\categoryImages\" />
     <Folder Include="src" />
     <Folder Include="src\app\" />
+    <Folder Include="src\app\common\form\" />
+    <Folder Include="src\app\common\options\" />
     <Folder Include="src\app\layout\" />
     <Folder Include="src\app\api\" />
+    <Folder Include="src\app\common\" />
     <Folder Include="src\app\stores\" />
     <Folder Include="src\features\" />
     <Folder Include="src\features\activities\dashboard\" />
@@ -63,6 +68,11 @@
     <TypeScriptCompile Include="src\app\api\agent.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\common\form\DateInput.tsx" />
+    <TypeScriptCompile Include="src\app\common\form\SelectInput.tsx" />
+    <TypeScriptCompile Include="src\app\common\form\TextAreaInput.tsx" />
+    <TypeScriptCompile Include="src\app\common\form\TextInput.tsx" />
+    <TypeScriptCompile Include="src\app\common\options\categoryOptions.ts" />
     <TypeScriptCompile Include="src\app\layout\App.tsx" />
     <TypeScriptCompile Include="src\app\layout\LoadingComponent.tsx" />
     <TypeScriptCompile Include="src\app\layout\NotFound.tsx" />
@@ -86,6 +96,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\features\nav\NavBar.tsx" />
     <TypeScriptCompile Include="src\models\activity.ts" />
+    <TypeScriptCompile Include="typings-custom\react-widgets-date-fns.d.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />

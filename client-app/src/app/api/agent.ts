@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { history } from '../..';
 import { IActivity } from '../../models/activity';
 
-axios.defaults.baseURL = 'https://localhost:44356/api';
+axios.defaults.baseURL = 'https://localhost:44357/api';
 
 axios.interceptors.response.use(undefined, error => {
     if (error.message === 'Network Error' && !error.response) {
@@ -21,6 +21,8 @@ axios.interceptors.response.use(undefined, error => {
     if (status === 500) {
         toast.error('Server error - check the terminal for more info!');
     }
+
+    throw error;
 });
 
 const responseBody = (response: AxiosResponse) => response.data;
